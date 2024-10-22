@@ -1,3 +1,5 @@
+package FabricaDeMaquinasTragamonedas;
+
 
 import Jugador.Jugador;
 import Ruleta.Ruleta;

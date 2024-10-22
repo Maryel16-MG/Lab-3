@@ -13,10 +13,10 @@ import Simbolo.Simbolo;
  * @author user
  */
 public class FabricaDeMaquinasTragamonedas {
-     public static MaquinaTragamonedas crearMaquinaTragamonedas(String tipo, Jugador jugador) {
+     public static Tragamonedas crearMaquinaTragamonedas(String tipo, Jugador jugador) {
         if (tipo.equals("clásica")) {
             Ruleta[] ruletas = { new Ruleta(crearSimbolosClasicos()), new Ruleta(crearSimbolosClasicos()), new Ruleta(crearSimbolosClasicos()) };
-            return new MaquinaTragamonedas(ruletas, jugador);
+            return new Tragamonedas(ruletas, jugador);
         }
         // Puedes crear diferentes tipos con más ruletas o temáticas.
         return null;
@@ -25,5 +25,4 @@ public class FabricaDeMaquinasTragamonedas {
     private static Simbolo[] crearSimbolosClasicos() {
         return new Simbolo[]{ new Simbolo("Cereza"), new Simbolo("Limón"), new Simbolo("Siete") };
     }
-    }
-
+}
