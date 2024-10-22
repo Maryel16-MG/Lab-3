@@ -11,30 +11,39 @@ import java.util.Random;
  *
  * @author user
  */
-public class Ruleta {
-     private Simbolo[] simbolos;
+public class Ruleta implements Runnable {
+    private Simbolo[] simbolos;
     private Simbolo simboloActual;
+    private boolean girando;
 
+    
     public  Ruleta(Simbolo[] simbolos) {
         this.simbolos = simbolos;
+        this.simboloActual = simbolos[0]; // Empieza con el primer símbolo.
+        this.girando = false;
     }
-
-    public void run() {
-        Random random = new Random();
-        try {
-            while (true) {
-                int indice = random.nextInt(simbolos.length);
-                simboloActual = simbolos[indice];
-                System.out.println("Carrete: " + simboloActual.getNombre());
-                Thread.sleep(200); // Pausa para simular el giro
-            }
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    public Simbolo getSimboloActual() {
+     public Simbolo getSimboloActual() {
         return simboloActual;
     }
     
+    public void run() {
+        girando = true;
+        Random random = new Random();
+
+        try {
+            // Simula el giro de los carretes
+            for (int i = 0; i < 20; i++) { // El bucle determina cuánto tiempo gira
+                simboloActual = simbolos[random.nextInt(simbolos.length)]; // Cambia el símbolo actual
+                Thread.sleep(100); // Pausa de 100ms entre cada cambio de símbolo
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt(); // Si se interrumpe el hilo, se detiene
+        } finally {
+            girando = false; // Al finalizar, marca el carrete como detenido
+        }
+    }
+
+    public boolean estaGirando() {
+        return girando;
+    }
 }

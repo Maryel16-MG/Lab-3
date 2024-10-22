@@ -38,5 +38,9 @@ import Ruleta.Ruleta;
             System.out.println("No tienes saldo suficiente.");
         }
     }
+
+    public Object getJugador() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
 
