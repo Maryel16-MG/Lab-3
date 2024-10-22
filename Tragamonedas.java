@@ -1,3 +1,6 @@
+
+import Ruleta.Ruleta;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -8,17 +11,17 @@
  * @author thyfa
  */
     public class Tragamonedas {
-    private Carrete[] carretes;
+    private Ruleta[] carretes;
     private Jugador jugador;
 
-    public Tragamonedas(Carrete[] carretes, Jugador jugador) {
+    public Tragamonedas(Ruleta[] carretes, Jugador jugador) {
         this.carretes = carretes;
         this.jugador = jugador;
     }
 
     public void girar() {
         // Inicia los hilos para cada carrete
-        for (Carrete carrete : carretes) {
+        for (Ruleta carrete : carretes) {
             new Thread((Runnable) carrete).start();
         }
         

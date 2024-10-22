@@ -4,6 +4,7 @@
  */
 package Ruleta;
 
+import Simbolo.Simbolo;
 import java.util.Random;
 
 /**
@@ -18,7 +19,6 @@ public class Ruleta {
         this.simbolos = simbolos;
     }
 
-    @Override
     public void run() {
         Random random = new Random();
         try {
