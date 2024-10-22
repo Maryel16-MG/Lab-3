@@ -14,12 +14,16 @@ import Ruleta.Ruleta;
  * @author thyfa
  */
     public class Tragamonedas {
-    private Ruleta[] carretes;
+private Ruleta[] carretes;
     private Jugador jugador;
 
     public Tragamonedas(Ruleta[] carretes, Jugador jugador) {
         this.carretes = carretes;
         this.jugador = jugador;
+    }
+
+    public Ruleta[] getCarretes() { // Método getter para obtener los carretes
+        return carretes;
     }
 
     public void girar() {
@@ -39,8 +43,8 @@ import Ruleta.Ruleta;
         }
     }
 
-    public Object getJugador() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Jugador getJugador() {
+        return jugador; // También puedes agregar un getter para el jugador si lo necesitas
     }
 }
 

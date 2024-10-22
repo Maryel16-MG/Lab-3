@@ -16,16 +16,21 @@ public class Ruleta implements Runnable {
     private Simbolo simboloActual;
     private boolean girando;
 
-    
-    public  Ruleta(Simbolo[] simbolos) {
+    public Ruleta(Simbolo[] simbolos) {
         this.simbolos = simbolos;
         this.simboloActual = simbolos[0]; // Empieza con el primer símbolo.
         this.girando = false;
     }
-     public Simbolo getSimboloActual() {
+
+    public Simbolo getSimboloActual() {
         return simboloActual;
     }
-    
+
+    // Método getter para obtener todos los símbolos
+    public Simbolo[] getSimbolos() {
+        return simbolos;
+    }
+
     public void run() {
         girando = true;
         Random random = new Random();
