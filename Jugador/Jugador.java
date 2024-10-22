@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package Jugador;
 
 /**
  *
- * @author thyfa
+ * @author user
  */
- public class Jugador {
-    private int saldo;
+public class Jugador {
+      private int saldo;
 
     public Jugador(int saldo) {
         this.saldo = saldo;
@@ -25,4 +26,4 @@
     public void agregarSaldo(int cantidad) {
         this.saldo += cantidad;
     }
- }
+}
