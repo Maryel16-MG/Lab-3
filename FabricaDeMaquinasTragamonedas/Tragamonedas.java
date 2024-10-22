@@ -13,8 +13,8 @@ import Ruleta.Ruleta;
  *
  * @author thyfa
  */
-    public class Tragamonedas {
-private Ruleta[] carretes;
+  public class Tragamonedas {
+    private Ruleta[] carretes;
     private Jugador jugador;
 
     public Tragamonedas(Ruleta[] carretes, Jugador jugador) {
@@ -22,47 +22,49 @@ private Ruleta[] carretes;
         this.jugador = jugador;
     }
 
-    public Ruleta[] getCarretes() { // Método getter para obtener los carretes
+    public Ruleta[] getCarretes() {
         return carretes;
     }
 
     public void girar() {
         // Inicia los hilos para cada carrete
         for (Ruleta carrete : carretes) {
-            new Thread((Runnable) carrete).start();
+            new Thread(carrete).start();
         }
         
+        // Espera hasta que todos los carretes se detengan
         boolean todosCarretesDetenidos = false;
-        while (!todosCarretesDetenidos){
+        while (!todosCarretesDetenidos) {
             todosCarretesDetenidos = true;
-            for (Ruleta carrete : carretes){
-                if (carrete.estaGirando())
-            todosCarretesDetenidos = false;
-            break;
-            }     
+            for (Ruleta carrete : carretes) {
+                if (carrete.estaGirando()) {
+                    todosCarretesDetenidos = false;
+                    break; // Sale del bucle si algún carrete sigue girando
+                }
             }
-        try{
-            Thread.sleep(50);
-        } catch (InterruptedException e){
-            Thread.currentThread().interrupt();
+            
+            try {
+                Thread.sleep(50); // Evita una espera activa intensa
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
+        
+        // Muestra el resultado cuando todos los carretes se han detenido
         mostrarResultado();
-}
-       private void mostrarResultado(){
+    }
+
+    private void mostrarResultado() {
         System.out.println("Resultado del giro:");
         for (Ruleta carrete : carretes) {
             System.out.println(carrete.getSimboloActual().getNombre());
         }
-    
-       }
+    }
 
-        public Jugador getJugador() {
-        return jugador;
     public Jugador getJugador() {
-        return jugador; // También puedes agregar un getter para el jugador si lo necesitas
+        return jugador;
     }
 }
-    
 
    
 
