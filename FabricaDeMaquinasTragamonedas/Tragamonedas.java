@@ -32,19 +32,37 @@ private Ruleta[] carretes;
             new Thread((Runnable) carrete).start();
         }
         
-        // Usa recursividad para continuar girando si el jugador tiene saldo
-        if (jugador.obtenerSaldo() > 0) {
-            System.out.println("¿Quieres jugar otra vez?");
-            // Si el jugador decide continuar, llamamos recursivamente a girar()
-            // Aquí puedes usar un Scanner o una forma de pedir la entrada del jugador
-            girar();
-        } else {
-            System.out.println("No tienes saldo suficiente.");
+        boolean todosCarretesDetenidos = false;
+        while (!todosCarretesDetenidos){
+            todosCarretesDetenidos = true;
+            for (Ruleta carrete : carretes){
+                if (carrete.estaGirando())
+            todosCarretesDetenidos = false;
+            break;
+            }     
+            }
+        try{
+            Thread.sleep(50);
+        } catch (InterruptedException e){
+            Thread.currentThread().interrupt();
         }
-    }
+        mostrarResultado();
+}
+       private void mostrarResultado(){
+        System.out.println("Resultado del giro:");
+        for (Ruleta carrete : carretes) {
+            System.out.println(carrete.getSimboloActual().getNombre());
+        }
+    
+       }
 
+        public Jugador getJugador() {
+        return jugador;
     public Jugador getJugador() {
         return jugador; // También puedes agregar un getter para el jugador si lo necesitas
     }
 }
+    
+
+   
 
