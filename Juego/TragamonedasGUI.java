@@ -46,11 +46,11 @@ public class TragamonedasGUI extends JFrame{
         for (int i = 0; i < slots.length; i++) {
             slots[i] = new JLabel();
             slots[i].setHorizontalAlignment(SwingConstants.CENTER);
-            slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\cereza (1).png")); // Imagen inicial
-            slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\estrella.png"));
-            slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\lingotes-de-oro.png"));
-            slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\siete.png"));
-            slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\uvas.png"));
+            slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\cereza (1).png")); // Imagen inicial
+            slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\estrella.png"));
+            slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\lingotes-de-oro.png"));
+            slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\siete.png"));
+            slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\uvas.png"));
             slotPanel.add(slots[i]);
         }
 
@@ -118,19 +118,19 @@ private class SpinAction implements ActionListener {
 
                         switch (nombreSimbolo) {
                             case "cereza":
-                                slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\cereza (1).png"));
+                                slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\cereza (1).png"));
                                 break;
                             case "estrella":
-                                slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\estrella.png"));
+                                slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\estrella.png"));
                                 break;
                             case "lingote":
-                                slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\lingotes-de-oro.png"));
+                                slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\lingotes-de-oro.png"));
                                 break;
                             case "siete":
-                                slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\siete.png"));
+                                slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\siete.png"));
                                 break;
                             case "uvas":
-                                slots[i].setIcon(new ImageIcon("C:\\Users\\fabia\\Documents\\NetBeansProjects\\LabTragaMonedas\\src\\Icons\\uvas.png"));
+                                slots[i].setIcon(new ImageIcon("C:\\Users\\thyfa\\OneDrive\\Documentos\\java\\LabTragaMonedas\\LabTragaMonedas\\src\\Icons\\uvas.png"));
                                 break;
                             default:
                                 // Si no se encuentra el símbolo, establecer una imagen por defecto
@@ -163,3 +163,4 @@ private class SpinAction implements ActionListener {
         new TragamonedasGUI(); 
     }
 } 
+
