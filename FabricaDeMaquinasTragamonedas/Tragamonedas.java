@@ -27,30 +27,29 @@ import Ruleta.Ruleta;
     }
 
     public void girar() {
-        // Inicia los hilos para cada carrete
+        
         for (Ruleta carrete : carretes) {
             new Thread(carrete).start();
         }
-        
-        // Espera hasta que todos los carretes se detengan
+   
         boolean todosCarretesDetenidos = false;
         while (!todosCarretesDetenidos) {
             todosCarretesDetenidos = true;
             for (Ruleta carrete : carretes) {
                 if (carrete.estaGirando()) {
                     todosCarretesDetenidos = false;
-                    break; // Sale del bucle si algún carrete sigue girando
+                    break; 
                 }
             }
             
             try {
-                Thread.sleep(50); // Evita una espera activa intensa
+                Thread.sleep(20); 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
         
-        // Muestra el resultado cuando todos los carretes se han detenido
+       
         mostrarResultado();
     }
 

@@ -13,9 +13,9 @@ import java.util.Random;
  * @author user
  */
 public class Ruleta implements Runnable {
-    private Simbolo[] simbolos;       // Lista de símbolos disponibles en la ruleta
-    private Simbolo simboloActual;    // Símbolo que está actualmente en la pantalla
-    private boolean girando;          // Estado de si la ruleta está girando
+    private Simbolo[] simbolos;       
+    private Simbolo simboloActual;   
+    private boolean girando;          
 
     public Ruleta(Simbolo[] simbolos) {
         this.simbolos = simbolos;
@@ -23,7 +23,7 @@ public class Ruleta implements Runnable {
         this.girando = false;
     }
 
-    // Método para obtener el símbolo actual
+   
     public Simbolo getSimboloActual() {
         return simboloActual;
     }
@@ -33,13 +33,13 @@ public class Ruleta implements Runnable {
         return simbolos;
     }
 
-    // Método para ejecutar el giro
+ 
     @Override
     public void run() {
         girar();
     }
 
-    // Método que contiene la lógica para girar la ruleta
+  
     public void girar() {
         girando = true;
         Random random = new Random();
@@ -57,7 +57,7 @@ public class Ruleta implements Runnable {
         }
     }
 
-    // Método para verificar si la ruleta aún está girando
+ 
     public boolean estaGirando() {
         return girando;
     }

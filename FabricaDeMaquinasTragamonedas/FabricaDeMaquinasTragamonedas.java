@@ -22,7 +22,7 @@ public class FabricaDeMaquinasTragamonedas {
         return null;
     }
 
-    // Método para crear símbolos clásicos con más símbolos añadidos
+    
     private static Simbolo[] crearSimbolosClasicos() {
         return new Simbolo[]{
             new Simbolo("Cereza"),
