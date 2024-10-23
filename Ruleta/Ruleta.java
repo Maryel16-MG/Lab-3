@@ -19,7 +19,7 @@ public class Ruleta implements Runnable {
 
     public Ruleta(Simbolo[] simbolos) {
         this.simbolos = simbolos;
-        this.simboloActual = simbolos[0]; // Empieza con el primer símbolo.
+        this.simboloActual = simbolos[0]; 
         this.girando = false;
     }
 
@@ -28,7 +28,7 @@ public class Ruleta implements Runnable {
         return simboloActual;
     }
 
-    // Método getter para obtener todos los símbolos
+   
     public Simbolo[] getSimbolos() {
         return simbolos;
     }
@@ -45,15 +45,15 @@ public class Ruleta implements Runnable {
         Random random = new Random();
 
         try {
-            // Simula el giro de los carretes
-            for (int i = 0; i < 20; i++) { // El bucle determina cuánto tiempo gira
-                simboloActual = simbolos[random.nextInt(simbolos.length)]; // Cambia el símbolo actual aleatoriamente
-                Thread.sleep(100); // Pausa de 100ms entre cada cambio de símbolo
+            
+            for (int i = 0; i < 20; i++) { 
+                simboloActual = simbolos[random.nextInt(simbolos.length)];
+                Thread.sleep(10); 
             }
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt(); // Si se interrumpe el hilo, se detiene
+            Thread.currentThread().interrupt();
         } finally {
-            girando = false; // Al finalizar, marca el carrete como detenido
+            girando = false; 
         }
     }
 
